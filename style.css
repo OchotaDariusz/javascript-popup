@@ -1,0 +1,72 @@
+button {
+    display: block;
+    margin: 20px auto;
+    background: crimson;
+    color: white;
+    border: 0;
+    padding: 6px 10px;
+    cursor: pointer;
+}
+
+.popup-wrapper {
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+}
+
+.popup {
+    font-family: arial;
+    text-align: center;
+    width: 100vw;
+    max-width: 300px;
+    margin: 10% auto;
+    padding: 20px;
+    background: white;
+    position: relative;
+}
+
+.popup a{
+    background: crimson;
+    color: white;
+    text-decoration: none;
+    padding: 6px 10px;
+}
+
+.popup-close {
+    position: absolute;
+    top: 5px;
+    right: 8px;
+    cursor: pointer;
+}
+
+.fade-in {
+    animation: fadeIn 0.5s;
+}
+
+.fade-out {
+    animation: fadeOut 0.5s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
