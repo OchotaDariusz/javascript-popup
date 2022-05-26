@@ -12,6 +12,7 @@ form.addEventListener('submit', event => {
     alert(`2nd: ${secondInput.value}`);
     firstInput.value = '';
     secondInput.value = '';
+    closePopup();
 });
 
 form.addEventListener('click', event => {
