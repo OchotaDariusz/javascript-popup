@@ -1,72 +1,97 @@
-button {
-    display: block;
-    margin: 20px auto;
-    background: crimson;
-    color: white;
-    border: 0;
-    padding: 6px 10px;
-    cursor: pointer;
+:root {
+    --color-1: #E63946;
+    --color-2: #F1FAEE;
+    --color-3: #A8DADC;
+    --color-4: #457B9D;
+    --color-5: #1D3557;
+    --half-black: rgba(0, 0, 0, 0.5);
+    --console-font: 'Courier New', Courier, monospace;
+    --button: var(--color-3);
+    --button-border: var(--color-4);
+    --button-hover: var(--color-4);
+    --button-border-hover: var(--color-5);
+    --input-border: var(--color-3);
+    --input-background: var(--color-2);
+    --background: var(--color-2);
+    --form-background: var(--color-2);
 }
 
-.popup-wrapper {
-    background: rgba(0, 0, 0, 0.5);
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    display: none;
+body {
+    background-color: var(--background);
 }
 
 .popup {
-    font-family: arial;
-    text-align: center;
+    background: var(--half-black);
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
     width: 100vw;
-    max-width: 300px;
-    margin: 10% auto;
-    padding: 20px;
-    background: white;
+    height: 100vh;
+}
+
+.close {
     position: relative;
-}
-
-.popup a{
-    background: crimson;
-    color: white;
-    text-decoration: none;
-    padding: 6px 10px;
-}
-
-.popup-close {
-    position: absolute;
-    top: 5px;
-    right: 8px;
+    left: 380px;
+    margin: 0 0 10px 0;
+    font-family: var(--console-font);
     cursor: pointer;
 }
 
-.fade-in {
-    animation: fadeIn 0.5s;
+p {
+    max-width: 20px;
 }
 
-.fade-out {
-    animation: fadeOut 0.5s;
+form {
+    display: grid;
+    grid-template-columns: repeat(6, 66px);
+    padding: 20px;
+    background-color: var(--form-background);
+    box-shadow: 0 0 15px 0 var(--half-black);
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-
-    to {
-        opacity: 1;
-    }
+form label {
+    grid-column: 1 / 3;
+    align-self: center;
+    font-family: var(--console-font);
 }
 
-@keyframes fadeOut {
-    from {
-        opacity: 1;
-    }
+form input {
+    grid-column: 3 / 7;
+    border-radius: 15px;
+    border-color: var(--input-border);
+    background-color: var(--input-background);
+    border-style: solid;
+    padding: 5px;
+    margin: 5px 0;
+    font-family: var(--console-font);
+}
 
-    to {
-        opacity: 0;
-    }
+form button {
+    grid-column-start: span 6;
+    background-color: var(--button);
+    border-radius: 10px;
+    border-style: solid;
+    border-color: var(--button-border);
+    cursor: pointer;
+    font-family: var(--console-font);
+    padding: 5px;
+    margin-top: 10px;
+}
+
+form button:hover {
+    background-color: var(--button-hover);
+    border-color: var(--button-border-hover);
+}
+
+#input2:valid {
+    border: solid green;
+}
+
+#input2 {
+    border: solid red;
 }
